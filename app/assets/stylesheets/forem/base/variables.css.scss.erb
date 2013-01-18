@@ -1,3 +1,12 @@
+$accent: #2bbfc9;
+$attention: #F6B960;
+$main: #464646;
+$links: #9b9b9b;
+$lightGrey:#bdbdbd;
+$lighterGrey: #f0f0f0;
+$dashed: 2px dashed $main;
+$dashed-focus: 2px dashed $accent;
+
 $light-bg1: #eee;
 $mid-bg1: #bbb;
 $mid-bg1-highlight: #aaa;
@@ -9,3 +18,23 @@ $visited-text: #333;
 $default-text: #000;
 $darkbg: #333;
 $darkbg-highlight: #222;
+
+@mixin rounded-corners {
+  border-radius: 10px;
+}
+
+@mixin transpBG {
+  border-radius: 8px;
+  background-color: rgba(255,255,255, 0.7);
+  padding: 20px;
+}
+
+@mixin accent {
+  color: $accent;
+  font-size: 110%;
+}
+
+@mixin box-padding {
+  padding: 10px 20px;
+}
+

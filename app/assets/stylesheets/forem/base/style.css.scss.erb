@@ -1,11 +1,26 @@
 @import "variables";
 
 body{
-  font-family: GillSans, Calibri, Trebuchet, sans-serif;
-  color: $default-text;
-  margin-left: 20%;
-  margin-right: 20%;
 }
+#page {
+  table {
+    border: $dashed-focus;
+    @include rounded-corners;
+    background: $accent;
+    a { color: $accent; }
+  }
+}
+th:first-child {
+  border-radius: 10px 0 0 0;
+}
+th:last-child {
+  border-radius: 0 10px 0 0;
+}
+tbody {
+  background-color: white;
+}
+
+.even { background: $lighterGrey; }
 
 #forums {
   .title {
@@ -25,28 +40,41 @@ body{
     font-style: oblique;
   }
   menu{
+    margin-bottom: 0;
+    margin-left: 15px;
     padding-left: 0;
     a{
       background-color: $bar1-midbg;
       padding: .5em;
+      border-radius: 8px 8px 0 0;
       display: inline-block;
       color: $default-text;
       text-decoration: none;
       &:hover{
         background-color: $bar1-bottombg;
+        color: $lighterGrey;
+        border-radius: 8px 8px 0 0;
       }
       margin: 0;
     }
   }
 }
+#description {
+  p {
+    margin-top: 0;
+    background: $lightGrey;
+    padding: 0.5em;
+  }
+}
+
 
 #topic, #forum {
   h2{
     padding: .5em;
     position: relative;
-    background-color: $light-bg1;
     color: #232323;
-    // margin: 0;
+    margin: 0;
+    padding-left: 0;
     a{
       text-decoration: none;
       color: #232323;
@@ -161,7 +189,6 @@ table.subdued{
   }
   thead{
     th{
-      background-color: $bar1-midbg;
       font-weight: normal;
       text-align: left;
     }
@@ -169,9 +196,10 @@ table.subdued{
   tbody{
     color: $lighter-text;
     .subject{
+      font-size: 1.25em;
     }
     .started-by{
-      font-size: .7em;
+      font-size: .8em;
       color: $lighter-text;
     }
     .latest-post{
@@ -185,7 +213,6 @@ table.subdued{
       }
     }
     .posts-count, .views-count{
-      font-size: .8em;
       width: 80px;
     }
   }
