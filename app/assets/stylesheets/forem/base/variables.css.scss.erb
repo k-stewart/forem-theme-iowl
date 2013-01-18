@@ -8,7 +8,7 @@ $dashed: 2px dashed $main;
 $dashed-focus: 2px dashed $accent;
 
 $light-bg1: #eee;
-$mid-bg1: #bbb;
+$mid-bg1: #ccc;
 $mid-bg1-highlight: #aaa;
 $bar1-topbg: #eee;
 $bar1-midbg: #bbb;
@@ -21,6 +21,11 @@ $darkbg-highlight: #222;
 
 @mixin rounded-corners {
   border-radius: 10px;
+}
+
+@mixin blue-box {
+  @include rounded-corners;
+  border: 2px solid $accent;
 }
 
 @mixin transpBG {

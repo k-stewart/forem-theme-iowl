@@ -4,8 +4,8 @@ body{
 }
 #page {
   table {
-    border: $dashed-focus;
-    @include rounded-corners;
+    @include blue-box;
+    border-top-left-radius: 0;
     background: $accent;
     a { color: $accent; }
   }
@@ -20,7 +20,7 @@ tbody {
   background-color: white;
 }
 
-.even { background: $lighterGrey; }
+.even { background: $mid-bg1; }
 
 #forums {
   .title {
@@ -38,25 +38,6 @@ tbody {
   .description{
     color: $lighter-text;
     font-style: oblique;
-  }
-  menu{
-    margin-bottom: 0;
-    margin-left: 15px;
-    padding-left: 0;
-    a{
-      background-color: $bar1-midbg;
-      padding: .5em;
-      border-radius: 8px 8px 0 0;
-      display: inline-block;
-      color: $default-text;
-      text-decoration: none;
-      &:hover{
-        background-color: $bar1-bottombg;
-        color: $lighterGrey;
-        border-radius: 8px 8px 0 0;
-      }
-      margin: 0;
-    }
   }
 }
 #description {
@@ -99,14 +80,18 @@ tbody {
 }
 
 #posts{
-  
-  .even{
-    background-color: $light-bg1;
+  @include blue-box;
+  border-top-left-radius: 0;
+  .post:last-child {
+    border-radius: 0 0 10px 10px;
   }
-  .odd{
-    background-color: #cfcfcf;
+  // no top-border on the first post; there's a bunch of empty <a>s
+  // in the posts table, so you can't use first-child.
+  #post_1 {
+    border-top: none;
   }
   .post{
+    border-top: 1px solid $accent;
     min-height: 75px;
     clear: both;
     position: relative;
@@ -132,7 +117,6 @@ tbody {
     .contents{
       margin-left: 160px;
       min-height: 100px;
-      border-left: 1px solid $mid-bg1;
       padding: .1em 1em;
 
       time{
@@ -149,28 +133,57 @@ tbody {
         display: block;
       }
       .actions{
-        display: none;
         position: absolute;
         right: 10px;
-        bottom: 0;
+        top: -12px;
         list-style-type: none;
         li{
+          display: inline;
+          margin: 5px;
           a{
             text-align: center;
-            display: block;
             text-decoration: none;
             padding: .25em;
             margin-bottom: .25em;
             color: $default-text;
-            background-color: $mid-bg1;
+            background-color: $accent;
+            padding: 5px 10px;
+            border-radius: 0 0 8px 8px;
             &:hover{
-              background-color: $mid-bg1-highlight;
+              background-color: $accent;
             }
           }
         }
       }
     }
+    
   }
+}
+
+
+menu {
+  margin-bottom: 0;
+  padding-left: 0;
+  a{
+    background-color: $bar1-midbg;
+    padding: .5em;
+    border-radius: 8px 8px 0 0;
+    display: inline-block;
+    color: $default-text;
+    text-decoration: none;
+    margin: 0;
+    &:hover{
+      background-color: $bar1-bottombg;
+      color: $lighterGrey;
+      border-radius: 8px 8px 0 0;
+    }
+  }
+}
+
+#topic_moderation {
+  display: none;
+  background: $accent;
+  padding: 7px 5px;
 }
 
 table.subdued{
