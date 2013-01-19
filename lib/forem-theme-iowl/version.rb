@@ -1,6 +1,6 @@
 module Forem
   module Theme
-    module Base
+    module Iowl
       VERSION = "0.0.1"
     end
   end

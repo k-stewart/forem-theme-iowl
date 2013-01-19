@@ -1,9 +1,9 @@
 require 'forem'
 module Forem
   module Theme
-    module Base
+    module Iowl
       class Engine < Rails::Engine
-        Forem.theme = :base
+        Forem.theme = :iowl
       end
     end
   end
