@@ -9,6 +9,13 @@ body{
   margin: 0;
   padding: .5em;
 }
+.content > h3 {
+  background: $mid-bg1;
+  margin: 0;
+  padding: 10px 15px;
+  border: $box;
+  border-bottom: none;
+}
 .content > #posts {
   border-top-right-radius: 0;
 }
@@ -260,6 +267,7 @@ table.subdued{
 
 form {
   @include blue-box;
+  border-top: 0;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   label { margin: 10px; }
@@ -277,6 +285,7 @@ form {
     height: 20em;
     width: 100%;
     border: none;
+    border-radius: 0 0 10px 10px;
   }
   input[type='submit'] {
     background: $accent;

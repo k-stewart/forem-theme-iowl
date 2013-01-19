@@ -7,6 +7,7 @@ $lighterGrey: #f0f0f0;
 $dashed: 2px dashed $main;
 $dashed-focus: 2px dashed $accent;
 $rounded: 10px;
+$box: 2px solid $accent;
 
 $light-bg1: #eee;
 $mid-bg1: #ccc;
@@ -22,7 +23,7 @@ $darkbg-highlight: #222;
 
 @mixin blue-box {
   border-radius: $rounded;
-  border: 2px solid $accent;
+  border: $box
 }
 
 @mixin transpBG {
