@@ -6,6 +6,7 @@ $lightGrey:#bdbdbd;
 $lighterGrey: #f0f0f0;
 $dashed: 2px dashed $main;
 $dashed-focus: 2px dashed $accent;
+$rounded: 10px;
 
 $light-bg1: #eee;
 $mid-bg1: #ccc;
@@ -19,12 +20,8 @@ $default-text: #000;
 $darkbg: #333;
 $darkbg-highlight: #222;
 
-@mixin rounded-corners {
-  border-radius: 10px;
-}
-
 @mixin blue-box {
-  @include rounded-corners;
+  border-radius: $rounded;
   border: 2px solid $accent;
 }
 

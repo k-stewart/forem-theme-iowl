@@ -78,12 +78,12 @@ tbody {
     }
   }
 }
-
 #posts{
   @include blue-box;
   border-top-left-radius: 0;
   .post:last-child {
-    border-radius: 0 0 10px 10px;
+    border-bottom-right-radius: $rounded;
+    border-bottom-left-radius: $rounded;
   }
   // no top-border on the first post; there's a bunch of empty <a>s
   // in the posts table, so you can't use first-child.
