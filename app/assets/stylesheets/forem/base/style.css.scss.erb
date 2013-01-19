@@ -2,6 +2,17 @@
 
 body{
 }
+
+.content > h2 {
+  background: $accent;
+  border-top-right-radius: 10px;
+  margin: 0;
+  padding: .5em;
+}
+.content > #posts {
+  border-top-right-radius: 0;
+}
+
 #page {
   table {
     @include blue-box;
@@ -244,6 +255,36 @@ table.subdued{
     &:hover{
       text-decoration: underline;
     }
+  }
+}
+
+form {
+  @include blue-box;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  label { margin: 10px; }
+  .string {
+    background: $mid-bg1;
+    padding: 5px;
+    input {
+      margin: 5px;
+      width: 85%;
+      height: 2.5em;
+      background: white;
+    }
+  }
+  textarea {
+    height: 20em;
+    width: 100%;
+    border: none;
+  }
+  input[type='submit'] {
+    background: $accent;
+    border: 0 none;
+    border-radius: 0 0 $rounded $rounded;
+    float: right;
+    margin-bottom: 10px;
+    padding: 5px 10px;
   }
 }
 
