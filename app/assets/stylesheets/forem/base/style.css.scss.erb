@@ -96,9 +96,15 @@ tbody {
     }
   }
 }
-#posts{
+
+// only round the edges if there's nothing after it, for elegant boxiness
+#posts:last-child {
   @include blue-box;
   border-top-left-radius: 0;
+}
+#posts{
+  border: $box;
+  border-bottom: none;
   .post:last-child {
     border-bottom-right-radius: $rounded;
     border-bottom-left-radius: $rounded;
@@ -281,11 +287,18 @@ form {
       background: white;
     }
   }
+  .text label {
+    background: $mid-bg1;
+    display: block;
+    margin: 0;
+    padding: 5px 10px;
+  }
   textarea {
     height: 20em;
     width: 100%;
     border: none;
     border-radius: 0 0 10px 10px;
+    padding: 10px 20px;
   }
   input[type='submit'] {
     background: $accent;
