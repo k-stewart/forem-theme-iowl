@@ -1,11 +1,28 @@
   // Style tweaks for Forem on IOWL.
 
   @import "variables";
+$tableGrey: #e7e7e7;
 
+#forums_container {
+  .intro {
+    line-height: 1;
+    font-size: 12pt;
+    margin-bottom: 48px;
+  }
+}
 .forem {
+  .category {
+    h2 {
+      font-family: 'futura-pt', sans-serif;
+      font-weight: 500;
+      margin-bottom: 2px;
+      margin-top: 40px;
+      a { color: $attention; }
+    }
+  }
+
   #forum + h2 {
     background: $accent;
-    border-top-right-radius: 10px;
     margin: 0;
     padding: .5em;
   }
@@ -14,37 +31,25 @@
     background: $mid-bg1;
     margin: 0;
     padding: 10px 15px;
-    border: $box;
     border-bottom: none;
-  }
-  .content > #posts {
-    border-top-right-radius: 0;
   }
 
   #page {
     table {
-      @include blue-box;
-      border-top-left-radius: 0;
+    border-collapse: collapse;
       a { color: $accent; }
     }
+    thead {
+      background: $tableGrey;
+    }
+    tbody {
+      tr { border-bottom: 2px solid $tableGrey; }
+      tr:last-child { border-bottom: none; }
+    }
   }
-  thead {
-    background: $accent;
-  }
-  th:first-child {
-  }
-  th:last-child {
-    border-radius: 0 7px 0 0;
-  }
-  tbody {
-  }
-
-  .even { background: $mid-bg1; }
 
   #forums {
-    .title {
-      font-size: 175%;
-    }
+    td { padding: .25em; }
   }
 
   #forum{
@@ -53,10 +58,6 @@
       position: absolute;
       right: 0;
       top: 0;
-    }
-    .description{
-      color: $lighter-text;
-      font-style: oblique;
     }
   }
   #description {
