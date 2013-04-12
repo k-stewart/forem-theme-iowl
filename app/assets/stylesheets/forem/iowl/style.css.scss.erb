@@ -3,6 +3,18 @@
   @import "variables";
 $tableGrey: #e7e7e7;
 
+#page_header h2{
+  position: absolute;
+  top: 55px;
+  left: 42px;
+  font-family: futura-pt;
+  font-weight: normal;
+  font-size: 14pt;
+  a {
+    color: $grey;
+  }
+}
+
 #forums_container {
   .intro {
     line-height: 1;
@@ -21,17 +33,32 @@ $tableGrey: #e7e7e7;
     }
   }
 
-  #forum + h2 {
-    background: $accent;
-    margin: 0;
-    padding: .5em;
+  #description {
+    h2 {
+      font-family: futura-pt;
+      font-weight: 300;
+      color: $attention;
+      font-size: 18pt;
+      padding-bottom: 4px;
+      margin: 0 0 0 0;
+      p { margin: 0 0 0 0; }
+    }
+    p { margin: 5px 0; }
   }
 
-  .content > h3 {
-    background: $mid-bg1;
-    margin: 0;
-    padding: 10px 15px;
-    border-bottom: none;
+  menu {
+    display: inline;
+    position: absolute;
+    top: -10px;
+    right: 0;
+    a {
+      background-color: orange;
+      padding: 5px 9px;
+      border-radius: 8px;
+      color: white;
+      font-family: sans-serif;
+      font-weight: 500;
+    }
   }
 
   #page {
@@ -45,7 +72,25 @@ $tableGrey: #e7e7e7;
     tbody {
       tr { border-bottom: 2px solid $tableGrey; }
       tr:last-child { border-bottom: none; }
+      .latest_post {
+        font-size: .8em;
+        width: 100%;
+      }
     }
+  }
+
+ <%# old style%>
+  #forum + h2 {
+    background: $accent;
+    margin: 0;
+    padding: .5em;
+  }
+
+  .content > h3 {
+    background: $mid-bg1;
+    margin: 0;
+    padding: 10px 15px;
+    border-bottom: none;
   }
 
   #forums {
@@ -58,44 +103,6 @@ $tableGrey: #e7e7e7;
       position: absolute;
       right: 0;
       top: 0;
-    }
-  }
-  #description {
-    p {
-      margin-top: 0;
-      background: $lightGrey;
-      padding: 0.5em;
-    }
-  }
-
-
-  #topic, #forum {
-    h2{
-      padding: .5em;
-      position: relative;
-      color: #232323;
-      margin: 0;
-      padding-left: 0;
-      a{
-        text-decoration: none;
-        color: #232323;
-        &:hover{
-          text-decoration: underline;
-        }
-      }
-      a.reply{
-        margin-right: 1em;
-        font-weight: normal;
-        position: absolute;
-        right: 0;
-        padding: .5em;
-        background-color: #fff;
-        font-size: .5em;
-        text-decoration: none;
-        &:hover{
-          background-color: $light-bg1;
-        }
-      }
     }
   }
 
@@ -182,26 +189,6 @@ $tableGrey: #e7e7e7;
             }
           }
         }
-      }
-    }
-  }
-
-
-  menu {
-    margin-bottom: 0;
-    padding-left: 0;
-    a{
-      background-color: $bar1-midbg;
-      padding: .5em;
-      border-radius: 8px 8px 0 0;
-      display: inline-block;
-      color: $default-text;
-      text-decoration: none;
-      margin: 0;
-      &:hover{
-        background-color: $bar1-bottombg;
-        color: $lighterGrey;
-        border-radius: 8px 8px 0 0;
       }
     }
   }
