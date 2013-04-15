@@ -3,7 +3,200 @@
   @import "variables";
 $tableGrey: #e7e7e7;
 
-#page_header h2{
+<%# old style%>
+
+.content > h3 {
+  margin: 0;
+  padding: 10px 15px;
+  border-bottom: none;
+}
+
+#forums {
+  td { padding: .25em; }
+}
+
+#forum{
+  position: relative;
+  .secondary-nav{
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.post{
+  clear: both;
+  position: relative;
+  .user{
+    float: left;
+    font-size: .75em;
+    width: 140px;
+    display: inline-block;
+    padding: .5em 1em;
+    .username{
+      font-weight: bold;
+    }
+    .icon  {
+      text-align: center;
+      img {
+        max-width: 70px;
+      }
+    }
+    .member-for{
+      width: 80px;
+      display: inline-block;
+    }
+  }
+  .contents{
+    margin-left: 160px;
+    min-height: 100px;
+    padding: .1em 1em;
+
+    time{
+      padding: 5px;
+      color: $lighter-text;
+      margin-bottom: 1em;
+      font-size: .7em;
+      line-height: 18px;
+    }
+    .text{
+      margin-right: 100px;
+    }
+    &:hover .actions{
+      display: block;
+    }
+    .actions{
+      position: absolute;
+      right: 10px;
+      top: -12px;
+      list-style-type: none;
+      li{
+        display: inline;
+        margin: 5px;
+      }
+    }
+  }
+}
+
+#topic_moderation {
+  display: none;
+  background: $accent;
+  padding: 7px 5px;
+}
+
+table.subdued{
+  width: 100%;
+  a{
+    text-decoration: none;
+    &:visited{
+      color: $visited-text;
+    }
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  td, th{
+    padding: .5em;
+  }
+  thead{
+    th{
+      font-weight: normal;
+      text-align: left;
+    }
+  }
+  tbody{
+    color: $lighter-text;
+    .subject{
+      font-size: 1.25em;
+    }
+    .started-by{
+      font-size: .8em;
+      color: $lighter-text;
+    }
+    .latest-post{
+      font-size: .7em;
+      width: 80px;
+      a{
+        text-decoration: none;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+    .posts-count, .views-count{
+      width: 80px;
+    }
+  }
+}
+
+.pages{
+  .page{
+    display: inline-block;
+    padding: .25em;
+    &.current{
+      background-color: $light-bg1;
+    }
+  }
+  a{
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+form {
+  .string {
+    background: $mid-bg1;
+    padding: 5px;
+    input {
+      margin: 5px;
+      width: 85%;
+      height: 2.5em;
+      background: white;
+    }
+  }
+  .text label {
+    background: $mid-bg1;
+    display: block;
+    margin: 0;
+    padding: 5px 10px;
+  }
+  textarea {
+    height: 20em;
+    width: 100%;
+    border: none;
+    border-radius: 0 0 10px 10px;
+    padding: 10px 20px;
+  }
+  input[type='submit'] {
+    background: $accent;
+    border: 0 none;
+    float: right;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    margin-right: 10px;
+  }
+}
+
+.lock.icon{
+  width: 24px;
+  height: 24px;
+  background: transparent url(<%= asset_path('forem/lock_icon.png') %>) 0 0;
+  display: inline-block;
+}
+
+.pin.icon{
+  width: 9px;
+  height: 15px;
+  background: transparent url(<%= asset_path('forem/pin_icon.png') %>) 0 0;
+  display: inline-block;
+}
+
+
+ <%# new style %>
+
+#page_header h2 {
   position: absolute;
   top: 55px;
   left: 42px;
@@ -78,238 +271,5 @@ $tableGrey: #e7e7e7;
       }
     }
   }
-
- <%# old style%>
-  #forum + h2 {
-    background: $accent;
-    margin: 0;
-    padding: .5em;
-  }
-
-  .content > h3 {
-    background: $mid-bg1;
-    margin: 0;
-    padding: 10px 15px;
-    border-bottom: none;
-  }
-
-  #forums {
-    td { padding: .25em; }
-  }
-
-  #forum{
-    position: relative;
-    .secondary-nav{
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-  }
-
-  // only round the edges if there's nothing after it, for elegant boxiness
-  #posts:last-child {
-    @include blue-box;
-    border-top-left-radius: 0;
-  }
-  #posts{
-    border: $box;
-    border-bottom: none;
-    .post:last-child {
-      border-bottom-right-radius: $rounded;
-      border-bottom-left-radius: $rounded;
-    }
-    // no top-border on the first post; there's a bunch of empty <a>s
-    // in the posts table, so you can't use first-child.
-    #post_1 {
-      border-top: none;
-    }
-    .post{
-      border-top: 1px solid $accent;
-      min-height: 75px;
-      clear: both;
-      position: relative;
-      .user{
-        float: left;
-        font-size: .75em;
-        width: 140px;
-        display: inline-block;
-        padding: .5em 1em;
-        .username{
-          font-weight: bold;
-        }
-        .icon  {
-          text-align: center;
-          img {
-            max-width: 70px;
-          }
-        }
-        .member-for{
-          width: 80px;
-          display: inline-block;
-        }
-      }
-      .contents{
-        margin-left: 160px;
-        min-height: 100px;
-        padding: .1em 1em;
-
-        time{
-          padding: 5px;
-          color: $lighter-text;
-          margin-bottom: 1em;
-          font-size: .7em;
-          line-height: 18px;
-        }
-        .text{
-          margin-right: 100px;
-        }
-        &:hover .actions{
-          display: block;
-        }
-        .actions{
-          position: absolute;
-          right: 10px;
-          top: -12px;
-          list-style-type: none;
-          li{
-            display: inline;
-            margin: 5px;
-            a{
-              text-align: center;
-              text-decoration: none;
-              padding: .25em;
-              margin-bottom: .25em;
-              color: $default-text;
-              background-color: $accent;
-              padding: 5px 10px;
-              border-radius: 0 0 8px 8px;
-              &:hover{
-                background-color: $accent;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  #topic_moderation {
-    display: none;
-    background: $accent;
-    padding: 7px 5px;
-  }
-
-  table.subdued{
-    width: 100%;
-    a{
-      text-decoration: none;
-      &:visited{
-        color: $visited-text;
-      }
-      &:hover{
-        text-decoration: underline;
-      }
-    }
-    td, th{
-      padding: .5em;
-    }
-    thead{
-      th{
-        font-weight: normal;
-        text-align: left;
-      }
-    }
-    tbody{
-      color: $lighter-text;
-      .subject{
-        font-size: 1.25em;
-      }
-      .started-by{
-        font-size: .8em;
-        color: $lighter-text;
-      }
-      .latest-post{
-        font-size: .7em;
-        width: 80px;
-        a{
-          text-decoration: none;
-          &:hover{
-            text-decoration: underline;
-          }
-        }
-      }
-      .posts-count, .views-count{
-        width: 80px;
-      }
-    }
-  }
-
-  .pages{
-    .page{
-      display: inline-block;
-      padding: .25em;
-      &.current{
-        background-color: $light-bg1;
-      }
-    }
-    a{
-      text-decoration: none;
-      &:hover{
-        text-decoration: underline;
-      }
-    }
-  }
-
-  form {
-    @include blue-box;
-    border-top: 0;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-    .string {
-      background: $mid-bg1;
-      padding: 5px;
-      input {
-        margin: 5px;
-        width: 85%;
-        height: 2.5em;
-        background: white;
-      }
-    }
-    .text label {
-      background: $mid-bg1;
-      display: block;
-      margin: 0;
-      padding: 5px 10px;
-    }
-    textarea {
-      height: 20em;
-      width: 100%;
-      border: none;
-      border-radius: 0 0 10px 10px;
-      padding: 10px 20px;
-    }
-    input[type='submit'] {
-      background: $accent;
-      border: 0 none;
-      border-radius: 0 0 $rounded $rounded;
-      float: right;
-      margin-bottom: 10px;
-      padding: 10px 15px;
-      margin-right: 10px;
-    }
-  }
-
-  .lock.icon{
-    width: 24px;
-    height: 24px;
-    background: transparent url(<%= asset_path('forem/lock_icon.png') %>) 0 0;
-    display: inline-block;
-  }
-
-  .pin.icon{
-    width: 9px;
-    height: 15px;
-    background: transparent url(<%= asset_path('forem/pin_icon.png') %>) 0 0;
-    display: inline-block;
-  }
 }
+
