@@ -158,13 +158,18 @@ table.subdued{
  <%# new style %>
 
 form {
+  .input {
+    margin-bottom: 0;
+  }
+  label { font-size: 17pt; }
   input, textarea {
     border: 2px solid $lightGrey;
     border-radius: 0;
     padding: 10px 20px;
+    width: 100%
   }
   textarea {
-    height: 20em;
+    height: 23em;
     width: 100%;
   }
   input[type='submit'] {
@@ -175,7 +180,8 @@ form {
     color: white;
     font-family: sans-serif;
     font-weight: 500;
-    text-align: right;
+    float: right;
+    width: auto;
   }
 }
 
