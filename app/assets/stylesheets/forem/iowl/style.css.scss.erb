@@ -62,13 +62,7 @@ $tableGrey: #e7e7e7;
     .text{
       margin-right: 100px;
     }
-    &:hover .actions{
-      display: block;
-    }
     .actions{
-      position: absolute;
-      right: 10px;
-      top: -12px;
       list-style-type: none;
       li{
         display: inline;
@@ -217,6 +211,9 @@ form {
     }
   }
 
+  #body_content {
+    position: relative;
+  }
   .category {
     h2 {
       font-family: 'futura-pt', sans-serif;
@@ -240,6 +237,11 @@ form {
     p { margin: 5px 0; }
   }
 
+  .admin_actions {
+    position: absolute;
+    top: -26px;
+    right: 3px;
+  }
   menu {
     display: inline;
     position: absolute;
@@ -257,8 +259,9 @@ form {
 
   #page {
     table {
-    border-collapse: collapse;
+      border-collapse: collapse;
       a { color: $accent; }
+      .member { width: 24% }
     }
     thead {
       background: $tableGrey;
@@ -271,6 +274,7 @@ form {
         width: 100%;
       }
     }
+    #topic { margin-top: 42px; }
   }
 }
 
